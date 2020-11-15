@@ -1,4 +1,4 @@
-import { IconButton, Avatar, Paper, Typography } from '@material-ui/core';
+import { IconButton, Avatar, Paper, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { ExitToApp } from '@material-ui/icons';
 import React from 'react';
@@ -17,7 +17,7 @@ const useStyle = makeStyles((theme) => ({
         position: 'absolute',
         width: 128,
         height: 128,
-        top: 128,
+        top: 70,
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 100,
@@ -30,12 +30,12 @@ const useStyle = makeStyles((theme) => ({
     },
     profile: {
         position: 'absolute',
-        top: 220,
+        top: 140,
         bottom: 0,
         left: 0,
         right: 0,
         padding: 18,
-        paddingTop: 64,
+        paddingTop: 80,
         background: 'white',
         clipPath: 'circle(100% at 50% 91%)',
     },
@@ -47,8 +47,19 @@ const useStyle = makeStyles((theme) => ({
         }
     },
     card: {
-        height: 60,
+        // height: 60,
         marginBottom: 12,
+        padding: `${theme.spacing(1)}px ${theme.spacing(3)}px ${theme.spacing(2)}px`,
+        position: 'relative'
+    },
+    metric: {
+        fontSize: 24,
+    },
+    detail: {
+        position: 'absolute',
+        right: theme.spacing(3),
+        bottom: theme.spacing(2),
+        zIndex: 200
     }
 }))
 
@@ -61,16 +72,26 @@ const Profile = () => {
             <div className={classes.profile}>
                 <Typography variant="h6" gutterBottom>My statistics</Typography>
                 <div className={classes.statistics}>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
-                    <Paper className={classes.card} variant="outlined"></Paper>
+                    <Paper className={classes.card} variant="outlined">
+                        <Typography variant="overline">Sleep quality</Typography>
+                        <div className={classes.metric}>8 Hours</div>
+                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                    </Paper>
+                    <Paper className={classes.card} variant="outlined">
+                        <Typography variant="overline">Everyday step count</Typography>
+                        <div className={classes.metric}>7000 Steps</div>
+                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                    </Paper>
+                    <Paper className={classes.card} variant="outlined">
+                        <Typography variant="overline">Calories intake</Typography>
+                        <div className={classes.metric}>xx kCal</div>
+                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                    </Paper>
+                    <Paper className={classes.card} variant="outlined">
+                        <Typography variant="overline">Your emotion in the last diary</Typography>
+                        <div className={classes.metric}>Angry</div>
+                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                    </Paper>
                 </div>
             </div>
         </div>
