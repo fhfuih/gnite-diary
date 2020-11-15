@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Button, Tabs, Tab, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import dayjs from 'dayjs';
@@ -43,10 +43,12 @@ const Diary = () => {
         setEmotion(newValue);
     }, []);
 
+    const date = useMemo(() => dayjs().format('LL'), []);
+
     return (
         <div className={classes.root}>
             <div className={classes.section}>
-                <Typography variant="h6">On {dayjs().format('LL')}</Typography>
+                <Typography variant="h6">On {date}</Typography>
             </div>
 
             <div className={classes.section}>
