@@ -77,6 +77,7 @@ const interest = [
 ]
 const useStyles = makeStyles((theme) => ({
     root: {
+        paddingTop: '1rem',
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
