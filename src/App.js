@@ -11,6 +11,7 @@ import Diary from './pages/diary';
 import Test from './pages/test';
 import Login from './pages/login';
 import Register from './pages/register';
+import Navi from './components/bottom-navigation';
 
 function App() {
   return (
@@ -24,12 +25,15 @@ function App() {
         </Route>
         <Route path={ROUTES.profile}>
           <Profile />
+          <Navi/>
         </Route>
         <Route path={ROUTES.diary}>
           <Diary />
+          <Navi/>
         </Route>
         <Route path={ROUTES.test}>
           <Test />
+          <Navi/>
         </Route>
         <Route path={ROUTES.root}>
           <Redirect to={ROUTES.login} />

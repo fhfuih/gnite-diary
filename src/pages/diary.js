@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 const Diary = () => {
     const classes = useStyles();
 
-    const [emotion, setEmotion] = useState(null);
+    const [emotion, setEmotion] = useState(0);
 
     const handleEmotionChange = useCallback((event, newValue) => {
         setEmotion(newValue);
