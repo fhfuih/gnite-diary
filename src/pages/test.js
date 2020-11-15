@@ -8,7 +8,7 @@ import React from 'react';
 
 
 const pageTitle = {
-    buffer1: "tests",
+    buffer1: "Recommended",
     buffer2: "You may also interested in",
     buffer3: "buffer3",
     buffer4: "buffer4"
@@ -83,10 +83,15 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
         overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
+        marginLeft: '1%',
+        marginRight: '1%'
     },
     gridList: {
-        width: 470,
+        width: 450,
         height: 730, // 736 available
+        marginLeft: '2%',
+        marginRight: '2%',
+        marginTop: '5%',
     },
     gridList_horizontal: {
         flexWrap: 'nowrap',
@@ -103,6 +108,21 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: 'rgba(255, 255, 255, 0.54)',
     },
+    section1:{
+        color: '#000000',
+        fontSize: '1.25rem',
+        marginTop: '0.5rem',
+        marginBottom: '0.5rem',
+    },
+    section2:{
+        color: '#464C47',
+        fontSize: '1.25rem',
+        marginTop: '0.5rem',
+        marginBottom: '0.5rem',
+    },
+    gridlisttilebar: {
+        
+    }
 }));
 
 const Test = () => {
@@ -112,7 +132,7 @@ const Test = () => {
         <div className={classes.root}>
             <GridList cellHeight={160} className={classes.gridList} col={3}>
                 <GridListTile key="Subheader" cols={2} style={{height:"auto"}}>
-                    <ListSubheader component="div">{pageTitle.buffer1}</ListSubheader>
+                    <ListSubheader component="div" className={classes.section1}>{pageTitle.buffer1}</ListSubheader>
                 </GridListTile>
                 {
                     data.map((x) => (
@@ -120,6 +140,7 @@ const Test = () => {
                             {/* <div> {x.name} </div> */}
                             <img src={x.img} alt={x.title}/>
                             <GridListTileBar 
+                                className={classes.gridlisttilebar}
                                 title={x.title}
                                 subtitle={<span>by: {x.author} </span>}
                                 actionIcon={
@@ -131,7 +152,7 @@ const Test = () => {
                     ))
                 }
                 <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
-                    <ListSubheader component="div">{pageTitle.buffer2}</ListSubheader>
+                    <ListSubheader component="div" className={classes.section2}>{pageTitle.buffer2}</ListSubheader>
                 </GridListTile>
                 <GridList className={classes.gridList_horizontal} cols={2.5}>
                     {
@@ -140,10 +161,7 @@ const Test = () => {
                                 <img src={x.img} alt={x.title}></img>
                                 <GridListTileBar
                                     title={x.title}
-                                    classes={{
-                                        root: classes.titleBar,
-                                        title: classes.title,
-                                    }}
+                                    className={`${classes.titleBar} ${classes.title}`}
                                     actionIcon={
                                         <IconButton aria-label={`star ${x.title}`}>
                                             <StarBorderIcon className={classes.title}></StarBorderIcon>
