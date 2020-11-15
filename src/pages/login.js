@@ -33,11 +33,14 @@ const useStyles = makeStyles((theme) => ({
     large: {
         width: theme.spacing(10),
         height: theme.spacing(10),
-        marginBottom: '3rem'
+        marginBottom: '3rem',
+        alignItems: 'center',
     },
     background: {
-        background: '../',
-        height: '100%'
+        backgroundImage: 'url(/login.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        height: '100%',
     },
     profile: {
         position: 'absolute',
@@ -50,18 +53,21 @@ const useStyles = makeStyles((theme) => ({
         background: 'white',
         clipPath: 'circle(100% at 50% 91%)',
     },
+    whiteText: {
+        color: 'white',
+    }
 }));
 
 export default function BasicTextFields() {
     const classes = useStyles();
 
     return (
-        <div className={classes.background}>
-            {/* <div className={classes.profile} />   */}
+        <div className={classes.background} >
+            
             <form className={classes.root} noValidate autoComplete="off">
-                <Avatar className={classes.large} alt="head picture" src="../logo512.png"/>
-                <TextField id="username-basic" label="User Name" />
-                <TextField id="password-basic" label="Password" type='password' />
+                <Avatar className={classes.large} alt="head picture" src="/logo512.png" />
+                <TextField floatingLabelFocusStyle={classes.whiteText} id="username-basic" label="User Name" />
+                <TextField floatingLabelFocusStyle={classes.whiteText} id="password-basic" label="Password" type='password' />
                 <Button className={classes.submit} variant="contained" color="primary" component={Link} to={ROUTES.profile}>
                     Log in
                 </Button>
