@@ -42,7 +42,7 @@ export default function BasicTextFields() {
             <Button className="Submit" variant="contained"
                 color="primary"
                 onClick={handleSubmit}
-            > Submit </Button>
+            > Log in </Button>
         </form>        
     );
 }

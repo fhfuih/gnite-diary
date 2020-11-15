@@ -47,7 +47,7 @@ const Register = () => {
             <TextField id='password-register' name='password-register' label="Password" type='password'></TextField>
             <TextField id='password-repeat' name='password-repeat' label="Repeat Your Password" type='password'></TextField>
             <Button className="Submit" variant="contained" color="primary"
-                onClick={handleSubmit}>Submit</Button>
+                onClick={handleSubmit}>Confirm</Button>
         </form>
     )
 };
