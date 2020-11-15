@@ -28,10 +28,11 @@ const Register = () => {
     const validationForm = () => {
         var x = document.forms[0]['password-register'];
         var y = document.forms[0]['password-repeat'];
-        if (x != y) {
-            alert("Password entered not the same");
-            return false;
-        }
+        // if (x != y) {
+        //     alert("Password entered not the same");
+        //     return false;
+        // }
+        x == y;
         return true;
     }
 

@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
         marginLeft: '1%',
-        marginRight: '1%'
+        marginRight: '1%',
     },
     gridList: {
         width: 450,
@@ -120,9 +120,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0.5rem',
         marginBottom: '0.5rem',
     },
-    gridlisttilebar: {
-        
-    }
+    background: {
+        background: 'linear-gradient(to top, #4B6A50, #839686)',
+        height: '100%'
+    },
 }));
 
 const Test = () => {
@@ -130,51 +131,50 @@ const Test = () => {
     return (
         // <div>Test page</div>
         <div className={classes.root}>
-            <GridList cellHeight={160} className={classes.gridList} col={3}>
-                <GridListTile key="Subheader" cols={2} style={{height:"auto"}}>
-                    <ListSubheader component="div" className={classes.section1}>{pageTitle.buffer1}</ListSubheader>
-                </GridListTile>
+        <GridList cellHeight={160} className={classes.gridList} col={3}>
+            <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+                <ListSubheader component="div" className={classes.section1}>{pageTitle.buffer1}</ListSubheader>
+            </GridListTile>
+            {
+                data.map((x) => (
+                    <GridListTile key={x.name} cols={x.cols || 1} >
+                        {/* <div> {x.name} </div> */}
+                        <img src={x.img} alt={x.title} />
+                        <GridListTileBar
+                            className={classes.gridlisttilebar}
+                            title={x.title}
+                            subtitle={<span>by: {x.author} </span>}
+                            actionIcon={
+                                <IconButton aria-label={`info about ${x.title}`} className={classes.icon}>
+                                    <InfoIcon></InfoIcon>
+                                </IconButton>
+                            }></GridListTileBar>
+                    </GridListTile>
+                ))
+            }
+            <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+                <ListSubheader component="div" className={classes.section2}>{pageTitle.buffer2}</ListSubheader>
+            </GridListTile>
+            <GridList className={classes.gridList_horizontal} cols={2.5}>
                 {
-                    data.map((x) => (
-                        <GridListTile key={x.name} cols={x.cols || 1} >
-                            {/* <div> {x.name} </div> */}
-                            <img src={x.img} alt={x.title}/>
-                            <GridListTileBar 
-                                className={classes.gridlisttilebar}
+                    interest.map((x) => (
+                        <GridListTile key={x.img}>
+                            <img src={x.img} alt={x.title}></img>
+                            <GridListTileBar
                                 title={x.title}
-                                subtitle={<span>by: {x.author} </span>}
+                                className={`${classes.titleBar} ${classes.title}`}
                                 actionIcon={
-                                    <IconButton aria-label={`info about ${x.title}`} className ={classes.icon}>
-                                        <InfoIcon></InfoIcon>
+                                    <IconButton aria-label={`star ${x.title}`}>
+                                        <StarBorderIcon className={classes.title}></StarBorderIcon>
                                     </IconButton>
                                 }></GridListTileBar>
                         </GridListTile>
                     ))
                 }
-                <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
-                    <ListSubheader component="div" className={classes.section2}>{pageTitle.buffer2}</ListSubheader>
-                </GridListTile>
-                <GridList className={classes.gridList_horizontal} cols={2.5}>
-                    {
-                        interest.map((x) => (
-                            <GridListTile key={x.img}>
-                                <img src={x.img} alt={x.title}></img>
-                                <GridListTileBar
-                                    title={x.title}
-                                    className={`${classes.titleBar} ${classes.title}`}
-                                    actionIcon={
-                                        <IconButton aria-label={`star ${x.title}`}>
-                                            <StarBorderIcon className={classes.title}></StarBorderIcon>
-                                        </IconButton>
-                                    }></GridListTileBar>
-                            </GridListTile>
-                        ))
-                    }
-                </GridList>
             </GridList>
-        </div>
-        
-
+        </GridList>
+    </div>
+    
     )
 };
 
