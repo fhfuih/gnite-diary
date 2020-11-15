@@ -66,12 +66,12 @@ const Diary = () => {
                 <Typography variant="h6">Your concerns</Typography>
                 <div className={classes.chips}>
                     <SelectableChip label="Family"/>
-                    <SelectableChip label="Love"/>
-                    <SelectableChip label="Friends"/>
+                    <SelectableChip label="Romance"/>
+                    <SelectableChip label="Friendship"/>
                     <SelectableChip label="Health"/>
                     <SelectableChip label="Job"/>
                     <SelectableChip label="Schoolwork"/>
-                    <SelectableChip label="Accidents"/>
+                    <SelectableChip label="Accident"/>
                 </div>
             </div>
 
