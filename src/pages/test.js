@@ -75,28 +75,31 @@ const interest = [
         img: '/sources/interests/Stay with Friends.jpg'
     }
 ]
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
-        marginLeft: '1%',
-        marginRight: '1%',
+        height: 'calc(100% - 56px)',
+        overflow: 'auto',
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        }
     },
     gridList: {
-        width: 450,
         height: 730, // 736 available
-        marginLeft: '2%',
-        marginRight: '2%',
+        width: '99%',
         marginTop: '5%',
     },
     gridList_horizontal: {
         flexWrap: 'nowrap',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
+        width: '100%',
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        }
     },
     title: {
         color: theme.palette.primary.light,
@@ -108,13 +111,13 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: 'rgba(255, 255, 255, 0.54)',
     },
-    section1:{
+    section1: {
         color: '#000000',
         fontSize: '1.25rem',
         marginTop: '0.5rem',
         marginBottom: '0.5rem',
     },
-    section2:{
+    section2: {
         color: '#464C47',
         fontSize: '1.25rem',
         marginTop: '0.5rem',
@@ -155,26 +158,26 @@ const Test = () => {
                 <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
                     <ListSubheader component="div" className={classes.section2}>{pageTitle.buffer2}</ListSubheader>
                 </GridListTile>
-                <GridList className={classes.gridList_horizontal} cols={2.5}>
-                    {
-                        interest.map((x) => (
-                            <GridListTile key={x.img}>
-                                <img src={x.img} alt={x.title}></img>
-                                <GridListTileBar
-                                    title={x.title}
-                                    className={`${classes.titleBar} ${classes.title}`}
-                                    actionIcon={
-                                        <IconButton aria-label={`star ${x.title}`}>
-                                            <StarBorderIcon className={classes.title}></StarBorderIcon>
-                                        </IconButton>
-                                    }></GridListTileBar>
-                            </GridListTile>
-                        ))
-                    }
-                </GridList>
+            </GridList>
+            <GridList className={classes.gridList_horizontal} cols={2.5} cellHeight={160}>
+                {
+                    interest.map((x) => (
+                        <GridListTile key={x.img}>
+                            <img src={x.img} alt={x.title}></img>
+                            <GridListTileBar
+                                title={x.title}
+                                className={`${classes.titleBar} ${classes.title}`}
+                                actionIcon={
+                                    <IconButton aria-label={`star ${x.title}`}>
+                                        <StarBorderIcon className={classes.title}></StarBorderIcon>
+                                    </IconButton>
+                                }></GridListTileBar>
+                        </GridListTile>
+                    ))
+                }
             </GridList>
         </div>
-    
+
     )
 };
 
