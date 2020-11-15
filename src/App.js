@@ -6,25 +6,30 @@ import {
   Redirect,
 } from 'react-router-dom';
 import ROUTES from './constants/routes';
+import Profile from './pages/profile';
+import Diary from './pages/diary';
+import Test from './pages/test';
+import Login from './pages/login';
+import Register from './pages/register';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path={ROUTES.login}>
-          <div>Log in page</div>
+          <Login />
         </Route>
         <Route path={ROUTES.register}>
-          <div>register page</div>
+          <Register />
         </Route>
         <Route path={ROUTES.profile}>
-          <div>profile page</div>
+          <Profile />
         </Route>
         <Route path={ROUTES.diary}>
-          <div>diary page</div>
+          <Diary />
         </Route>
         <Route path={ROUTES.test}>
-          <div>test page</div>
+          <Test />
         </Route>
         <Route path={ROUTES.root}>
           <Redirect to={ROUTES.login} />
