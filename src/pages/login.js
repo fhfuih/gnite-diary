@@ -38,7 +38,7 @@ export default function BasicTextFields() {
     return (
         <form className={classes.root} noValidate autoComplete="off">
             <TextField id="username-basic" label="User Name" />
-            <TextField id="password-basic" label="Password" />
+            <TextField id="password-basic" label="Password" type='password'/>
             <Button className="Submit" variant="contained"
                 color="primary"
                 onClick={handleSubmit}
