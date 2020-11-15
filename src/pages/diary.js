@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
     center: {
         alignSelf: 'center',
+    },
+    tab: {
+        minWidth: 'unset',
+        fontSize: 30,
     }
 }));
 
@@ -48,10 +52,11 @@ const Diary = () => {
             <div className={classes.section}>
                 <Typography variant="h6">Your mood...</Typography>
                 <Tabs variant="fullWidth" indicatorColor="secondary" value={emotion} onChange={handleEmotionChange}>
-                    <Tab label="😄" style={{ minWidth: 'unset' }}/>
-                    <Tab label="😔" style={{ minWidth: 'unset' }}/>
-                    <Tab label="😢" style={{ minWidth: 'unset' }}/>
-                    <Tab label="😡" style={{ minWidth: 'unset' }}/>
+                    <Tab label="😄" className={classes.tab}/>
+                    <Tab label="😶" className={classes.tab}/>
+                    <Tab label="😔" className={classes.tab}/>
+                    <Tab label="😢" className={classes.tab}/>
+                    <Tab label="😡" className={classes.tab}/>
                 </Tabs>
             </div>
 
@@ -61,9 +66,9 @@ const Diary = () => {
                     <SelectableChip label="Family"/>
                     <SelectableChip label="Love"/>
                     <SelectableChip label="Friends"/>
+                    <SelectableChip label="Health"/>
                     <SelectableChip label="Job"/>
                     <SelectableChip label="Schoolwork"/>
-                    <SelectableChip label="Life"/>
                 </div>
             </div>
 
