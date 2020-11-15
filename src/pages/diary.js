@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Button, Tabs, Tab, TextField, Typography } from '@material-ui/core';
+import { Button, Tabs, Tab, TextField, Typography, Dialog, DialogTitle, CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import dayjs from 'dayjs';
 import SelectableChip from '../components/selectable-chip';
@@ -31,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
     tab: {
         minWidth: 'unset',
         fontSize: 30,
+    },
+    loading: {
+        display: 'flex',
+        alignItems: 'center',
+        '& > span': {
+            marginLeft: 10
+        },
+        marginLeft: 24
     }
 }));
 
@@ -38,10 +46,18 @@ const Diary = () => {
     const classes = useStyles();
 
     const [emotion, setEmotion] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     const handleEmotionChange = useCallback((event, newValue) => {
         setEmotion(newValue);
     }, []);
+
+    const handleSubmit = useCallback(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, [])
 
     const date = useMemo(() => dayjs().format('LL'), []);
 
@@ -63,7 +79,7 @@ const Diary = () => {
             </div>
 
             <div className={classes.section}>
-                <Typography variant="h6">Your concerns</Typography>
+                <Typography variant="h6">Your concerns...</Typography>
                 <div className={classes.chips}>
                     <SelectableChip label="Family"/>
                     <SelectableChip label="Romance"/>
@@ -80,7 +96,14 @@ const Diary = () => {
                 <TextField fullWidth multiline variant="outlined" rows={10} />
             </div>
 
-            <Button variant="contained" color="primary">Submit</Button>
+            <Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
+
+            <Dialog open={loading}>
+                <div className={classes.loading}>
+                    <CircularProgress color="secondary" />
+                    <DialogTitle>Loading</DialogTitle>
+                </div>
+            </Dialog>
         </div>
     )
 };
