@@ -71,6 +71,7 @@ const Diary = () => {
                     <SelectableChip label="Health"/>
                     <SelectableChip label="Job"/>
                     <SelectableChip label="Schoolwork"/>
+                    <SelectableChip label="Accidents"/>
                 </div>
             </div>
 
