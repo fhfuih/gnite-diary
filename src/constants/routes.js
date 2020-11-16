@@ -4,5 +4,6 @@ export default {
     profile: '/profile',
     diary: '/diary',
     test: '/test',
+    detail: '/detail',
     root: '/',
 };

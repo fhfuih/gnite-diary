@@ -13,6 +13,7 @@ import Diary from './pages/diary';
 import Test from './pages/test';
 import Login from './pages/login';
 import Register from './pages/register';
+import Detail from './pages/detail';
 import Navi from './components/bottom-navigation';
 
 const theme = createMuiTheme({
@@ -47,6 +48,10 @@ function App() {
           </Route>
           <Route path={ROUTES.test}>
             <Test />
+            <Navi/>
+          </Route>
+          <Route path={ROUTES.detail}>
+            <Detail />
             <Navi/>
           </Route>
           <Route path={ROUTES.root}>

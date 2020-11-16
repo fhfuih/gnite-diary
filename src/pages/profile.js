@@ -75,22 +75,22 @@ const Profile = () => {
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Sleep quality</Typography>
                         <div className={classes.metric}>8 Hours</div>
-                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                        <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=sleep' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Everyday step count</Typography>
                         <div className={classes.metric}>7000 Steps</div>
-                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                        <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=exercise' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Calories intake</Typography>
                         <div className={classes.metric}>xx kCal</div>
-                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                        <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=calories' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Your emotion in the last diary</Typography>
                         <div className={classes.metric}>Angry</div>
-                        <Button size="small" className={classes.detail}>Detail ▶</Button>
+                        <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=emotion' }}>Detail ▶</Button>
                     </Paper>
                 </div>
             </div>
