@@ -74,22 +74,22 @@ const Profile = () => {
                 <div className={classes.statistics}>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Sleep quality</Typography>
-                        <div className={classes.metric}>8 Hours</div>
+                        <div className={classes.metric}>4.0 Hours</div>
                         <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=sleep' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Everyday step count</Typography>
-                        <div className={classes.metric}>7000 Steps</div>
+                        <div className={classes.metric}>2580 Steps</div>
                         <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=exercise' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Calories intake</Typography>
-                        <div className={classes.metric}>xx kCal</div>
+                        <div className={classes.metric}>2899 Cal</div>
                         <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=calories' }}>Detail ▶</Button>
                     </Paper>
                     <Paper className={classes.card} variant="outlined">
                         <Typography variant="overline">Your emotion in the last diary</Typography>
-                        <div className={classes.metric}>Angry</div>
+                        <div className={classes.metric}>Peace</div>
                         <Button size="small" className={classes.detail} component={Link} to={{ pathname: ROUTES.detail, search: '?section=emotion' }}>Detail ▶</Button>
                     </Paper>
                 </div>
