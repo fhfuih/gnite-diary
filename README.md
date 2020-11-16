@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# G'Nite Diary
+
+This is the front-end part of our project *G'Nite Diary* for Def Hacks | Global 2.0. The backend can be found [here](https://github.com/Zascc/gnite_diary).
+
+
+----------------
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
