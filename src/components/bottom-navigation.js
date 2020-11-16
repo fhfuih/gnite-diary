@@ -11,6 +11,7 @@ const useStyles = makeStyles({
         bottom: 0,
         left: 0,
         right: 0,
+        zIndex: 500,
     }
 })
 
