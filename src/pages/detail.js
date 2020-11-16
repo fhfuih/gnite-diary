@@ -7,6 +7,8 @@ import { ArrowBack } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
 import { ResponsiveBar as Bar } from '@nivo/bar';
+import { ResponsiveScatterPlot as ScatterPlot } from '@nivo/scatterplot';
+import emotions from '../constants/emotions';
 import ROUTES from '../constants/routes';
 import SLEEP from '../stab/sleep.json';
 import SPORT from '../stab/sport.json';
@@ -155,12 +157,16 @@ const Detail = () => {
                 data = DIET;
                 break;
             case 'emotion':
-                data = EVENT;
+                data = emotions.map(t => ({
+                    id: t.emoji,
+                    data: EVENT.filter(e => t.text === e.emotion).map(e => ({ x: e.date_added, y: t.emoji }))
+                }));
                 break;
         }
         setData(data);
     }, [])
 
+    console.log(data);
     return (
         <div className={classes.background}>
             <IconButton className={classes.settings} component={Link} to={ROUTES.profile}><ArrowBack /></IconButton>
@@ -168,9 +174,19 @@ const Detail = () => {
             <div className={classes.profile}>
                 <div className={classes.statistics}>
                     <Paper className={classes.card} variant="outlined">
-                        <Bar 
+                        {section === 'emotion'
+                            ? <ScatterPlot
+                                height={300}
+                                margin={{ left: 30, right: 10, top: 10, bottom: 10 }}
+                                data={data}
+                                xScale={{ type: 'point' }}
+                                yScale={{ type: 'point' }}
+                                // gridYValues={emotions.map(t => t.emoji)}
+                                isInteractive={false}
+                                />
+                            : <Bar 
                             height={300}
-                            margin={{ left: 30, top: 10, bottom: 10 }}
+                            margin={{ left: 50, top: 10, bottom: 10 }}
                             colors="#EEE1C1"
                             data={data}
                             keys={[text[section].field]}
@@ -178,7 +194,7 @@ const Detail = () => {
                             barComponent={BarComponent}
                             enableLabel={true}
                             axisBottom={{ enable: false }}
-                        />
+                        />}
                     </Paper>
                     <Typography variant="body2" className={classes.advice}>{text[section].advice}</Typography>
                 </div>
