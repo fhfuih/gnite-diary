@@ -20,26 +20,26 @@ const Navi = () => {
     const location = useLocation();
     const history = useHistory();
     const classes = useStyles();
-    console.log(location.pathname, Object.entries(ROUTES).map(([k, v]) => v === location.pathname || k))
     const value = useMemo(() => {
         switch (location.pathname) {
+            case ROUTES.write:
             case ROUTES.diary:
                 return 0;
             case ROUTES.profile:
                 return 1;
-            case ROUTES.test:
+            case ROUTES.plan:
                 return 2;
         }
     }, [location]);
     const onChange = useCallback((event, newValue) => {
-        const route = [ROUTES.diary, ROUTES.profile, ROUTES.test][newValue];
+        const route = [ROUTES.diary, ROUTES.profile, ROUTES.plan][newValue];
         history.push(route);
     }, [history]);
     return (
         <BottomNavigation showLabels className={classes.root} value={value} onChange={onChange}>
             <BottomNavigationAction label="Diary" icon={<Favorite />} />
             <BottomNavigationAction label="Profile" icon={<Person />} />
-            <BottomNavigationAction label="Test" icon={<Assignment />} />
+            <BottomNavigationAction label="Plan" icon={<Assignment />} />
         </BottomNavigation>
     )
 }

@@ -1,1 +1,58 @@
-[{"id": 1, "usr_id": "1", "SleepLength": 7.0, "date_added": "2020-11-15T18:15:35.612Z"}, {"id": 2, "usr_id": "1", "SleepLength": 7.0, "date_added": "2020-11-15T18:15:38.436Z"}, {"id": 3, "usr_id": "1", "SleepLength": 5.0, "date_added": "2020-11-16T01:43:07.564Z"}, {"id": 4, "usr_id": "1", "SleepLength": 4.0, "date_added": "2020-11-16T01:43:14.924Z"}, {"id": 5, "usr_id": "1", "SleepLength": 3.0, "date_added": "2020-11-16T01:43:17.848Z"}, {"id": 6, "usr_id": "1", "SleepLength": 5.0, "date_added": "2020-11-16T01:43:21.465Z"}, {"id": 7, "usr_id": "1", "SleepLength": 4.0, "date_added": "2020-11-16T01:43:24.563Z"}]
+[
+    {
+        "id": 1,
+        "usr_id": "1",
+        "SleepLength": 7,
+        "begin": "2020-11-16T00:30",
+        "end": "2020-11-16T08:13",
+        "date_added": "2020-11-15T18:15:35.612Z"
+    },
+    {
+        "id": 2,
+        "usr_id": "1",
+        "SleepLength": 7,
+        "begin": "2020-11-16T00:00",
+        "end": "2020-11-16T08:30",
+        "date_added": "2020-11-15T18:15:38.436Z"
+    },
+    {
+        "id": 3,
+        "usr_id": "1",
+        "SleepLength": 5,
+        "begin": "2020-11-16T01:45",
+        "end": "2020-11-16T07:45",
+        "date_added": "2020-11-16T01:43:07.564Z"
+    },
+    {
+        "id": 4,
+        "usr_id": "1",
+        "SleepLength": 4,
+        "begin": "2020-11-16T02:30",
+        "end": "2020-11-16T07:30",
+        "date_added": "2020-11-16T01:43:14.924Z"
+    },
+    {
+        "id": 5,
+        "usr_id": "1",
+        "SleepLength": 3,
+        "begin": "2020-11-16T03:11",
+        "end": "2020-11-16T09:12",
+        "date_added": "2020-11-16T01:43:17.848Z"
+    },
+    {
+        "id": 6,
+        "usr_id": "1",
+        "SleepLength": 5,
+        "begin": "2020-11-16T03:03",
+        "end": "2020-11-16T09:42",
+        "date_added": "2020-11-16T01:43:21.465Z"
+    },
+    {
+        "id": 7,
+        "usr_id": "1",
+        "SleepLength": 4,
+        "begin": "2020-11-16T04:36",
+        "end": "2020-11-16T12:27",
+        "date_added": "2020-11-16T01:43:24.563Z"
+    }
+]
